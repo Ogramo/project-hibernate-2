@@ -125,7 +125,7 @@ public class Main {
     }
 
     private void customerRentInventory(Customer customer) {
-        try (Session session = sessionFactory.getCurrentSession(){
+        try (Session session = sessionFactory.getCurrentSession()){
             session.beginTransaction();
 
             Film film = filmDAO.getFirstAvailableFilmForRent();
@@ -134,6 +134,7 @@ public class Main {
             Inventory inventory = new Inventory();
             inventory.setFilm(film);
             inventory.setStore(store);
+            inventoryDAO.save(inventory);
 
             Staff staff = store.getStaff();
 
