@@ -48,4 +48,12 @@ public class Inventory {
     public void setStore(Store store) {
         this.store = store;
     }
+
+    public LocalDateTime getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(LocalDateTime lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
 }
